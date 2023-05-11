@@ -1,0 +1,41 @@
+<div class="backgound-image"><!--[ngStyle]="{backgroundColor:color}"-->
+</div>
+<div class="row">
+        <div class=" col-sm-3 col-md-2 mt-3 text-start" style="background-color: #02608796; border-radius: 10px; padding:10px 20px;">
+            <h6 class="fs-2 text-light mt-4 mb-3">Brand</h6>
+            <li class="list-group-item mb-2" style="cursor: pointer;" (click)="getprobran(null)">All Brands</li>
+
+            <ul class="list-group" *ngFor="let brand of pros">
+              <li class="list-group-item mb-2" style="cursor: pointer;" (click)="getprobran(brand.brandId)">{{brand.brand.name}}</li>
+            </ul>
+            <h6 class="fs-2 text-light mt-4 mb-3">Price</h6>
+            <ul class="list-group">
+              <li class="list-group-item mb-2" style="cursor: pointer;">High To Low</li>
+              <li class="list-group-item mb-2" style="cursor: pointer;">Low To High</li>
+
+            </ul>
+        </div>
+    
+<div class="ms-2 me-2 mt-5 mb-3 col-sm-7 col-md-9">
+    <div class="maincards row justify-content-center"  >
+
+            <div class="card mb-3 ms-2" style="width: 18rem;" *ngFor="let product of products">
+            <a [routerLink]="product.id">
+                 <div hidden value="product.id"></div>
+                <img [src]="path+product.imageUrl" class="card-img-top img-fluid" style="height: 150px;" alt="...">
+               </a>
+                <div class="card-body">
+                  <h5 class="card-title">{{product.title}}</h5>
+                  <p class="card-text">{{product.description}}</p>
+                  <p class="card-text">{{product.price}}</p>
+    
+                   <div class="row justify-content-between">
+                    <a routerLink="id" class="btn text-primary col-3">View</a>
+                    <button class="btn btn-outline-primary col-5" type="submit" (click)="addShopping(product)"><i class="bi bi-cart3" style="font-size: 20px;"></i></button>
+                   </div>
+        </div>
+        </div>
+    </div>
+
+</div>
+</div>

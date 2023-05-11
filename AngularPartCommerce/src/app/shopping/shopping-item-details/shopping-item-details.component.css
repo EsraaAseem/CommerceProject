@@ -1,0 +1,7 @@
+.inp:hover{
+border-bottom: 1px solid rgb(63, 144, 197);
+}
+.inp{
+    border:none;
+    outline:none;
+}

@@ -1,0 +1,21 @@
+<div class="container mt-4 d-flex row justify-content-between">
+    <div class="col-lg-8">
+<app-stepper [LinerModeSelected]="true" #appStepper>
+    <cdk-step [label]="'Address'" [completed]="(checkoutForm.get('addressForm')).valid">
+    <app-address-checkout [checkoutForm]="checkoutForm"></app-address-checkout>
+     </cdk-step>
+    <cdk-step [label]="'Delivary'"  [completed]="(checkoutForm.get('delieveryForm')).valid">
+    <app-delivary-checkout [checkoutForm]="checkoutForm"></app-delivary-checkout>
+    </cdk-step>
+    <cdk-step [label]="'Review'">
+    <app-review-checkout [appStepper]="appStepper"></app-review-checkout>
+    </cdk-step>
+    <cdk-step [label]="'PayMent'" >
+    <app-payment-checkout [checkoutForm]="checkoutForm"></app-payment-checkout>
+     </cdk-step>     
+</app-stepper>
+</div>
+<div class="col-lg-3 ">
+    <app-order-total></app-order-total>
+</div>
+</div>

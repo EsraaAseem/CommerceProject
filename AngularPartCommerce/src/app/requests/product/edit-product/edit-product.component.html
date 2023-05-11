@@ -1,0 +1,66 @@
+<div class="errorcontent text-center row justify-content-center align-item-center align-content-center" *ngIf=" loginerror&&show">
+    <div class="err">
+      <div class="close" (click)="onClose()" #clo>&#10006;</div>
+      <p>{{loginerror}}</p>
+      <a class=" btn btn-primary"  routerLink="/Student/login" >Login</a>
+  
+    </div>
+  </div>
+  
+  <form  #inform="ngForm">
+      <div class="row justify-content-center ">
+          <div class=" ms-3 ">
+              <div class="row mt-3 mb-3 ">
+                  <button class="col-md-3 btn btn-success mt-2 mb-2 me-2" type="submit" [disabled]="!inform.valid" (click)="onSubmit()">Save</button>
+                  <button class="col-md-3 btn btn-primary mt-2 mb-2 ms-2" type="button" (click)="onDelete()" >Delete </button>
+                  <button class="col-md-3 btn btn-danger mt-2 mb-2 ms-2" type="button" (click)="onCancel()">Cancel </button>
+              </div>
+              <div class="row ">
+              <div class="m-3 row justify-content-around col-md-5">
+                  <div class=" ">
+                      <label for="title" class=" mb-2 ms-2" >Name</label>
+                      <input type="text"  id="title" class="ms-2 form-control" name="title" required  [(ngModel)]="product.title" >
+                  </div >
+              </div>
+                  <div class="m-3 row justify-content-around col-md-5 ">
+                    <div class="">
+                        <label for="description" class=" mb-2 ms-2" >Discription</label>
+                        <input type="text"  id="description" class="ms-2 form-control" name="description" required  [(ngModel)]="product.description" >
+                    </div >
+                  </div>
+                    <div class="m-3 row justify-content-around col-md-5 ">
+                        <div class="">
+                            <label for="price" class=" mb-2 ms-2" >price</label>
+                            <input type="number"  id="price" class="ms-2 form-control" name="price" required  [(ngModel)]="product.price" >
+                        </div >
+                    </div>
+                        <div class="m-3 row justify-content-around col-md-5 ">
+                            <div class="">
+                                <label for="listPrice" class=" mb-2 ms-2" >listPrice</label>
+                                <input type="number"  id="listPrice" class="ms-2 form-control" required name="listPrice" required  [(ngModel)]="product.listPrice" >
+                            </div >
+                        </div>
+
+                        <div class="col-md-5 mt-3">
+                            <select required class="form-select form-select-sm" aria-label=".form-select-sm example" name="categoryId"  [(ngModel)]="product.categoryId">
+                                <option  *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+                              </select>
+                        </div>
+                        <div class="col-md-5 mt-3">
+                            <select required class="form-select form-select-sm" aria-label=".form-select-sm example" name="brandId"  [(ngModel)]="product.brandId">
+                                <option  *ngFor="let brand of brands" [value]="brand.id">{{brand.name}}</option>
+                              </select>
+                        </div>
+                              <div class="col-md-5 mb-2 mt-5">
+                                <div class="proimg" >
+                                <img [src]="profileimg" alt="" width="100%" style="height: 250px;">
+                                </div>
+                                <input type="file" hidden (change)="uploadImage($event)"  id="imgFileUrl" class="ms-2 form-control"  #im >
+                                <button class="btn btn-primary mt-4 mb-4" (click)="im.click()">Change img</button>
+                            </div >
+                  </div>
+  
+             
+       </div>
+       </div>
+   </form>

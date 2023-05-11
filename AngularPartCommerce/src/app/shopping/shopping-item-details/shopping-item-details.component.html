@@ -1,0 +1,27 @@
+<div class="container">
+   <form #inform="ngForm">
+    <div class="details row mt-4 justify-content-center mb-5 align-items-center">
+      <div class="image col-sm-5 col-md-3">
+        <img [src]="path+product.imageUrl" class=" img-fluid col-10" style="height: 200px;" alt="...">
+       </div>
+       <div class="product col-8 text-center mt-5">
+        <div class="det text-end">
+            <h3 class="text-primary mb-3">{{product.title}}</h3>
+            <p class="text-primary">{{product.description}}</p>
+            <h2 class="text-info">Price : <span class="text-sucess" >{{product.price}}$</span></h2>
+        </div>
+         <div class="count mt-5 mb-5">
+          <span class="text-primary me-2" style="font-size: 23px;" > Count :</span>
+            <input class="col-md-6 inp text-primary" type="number"  min="1" value="1" #co>
+         </div>
+       </div>
+        </div>
+        <div class="choice mt-5">
+            <div class="row mt-5 justify-content-center">
+                <a routerLink="id" class="btn btn-primary text-light col-lg-3 col-md-4 col-8 me-md-4 mb-4 mb-md-0">Go Back</a>
+                <button class="btn btn-outline-primary col-lg-3 col-md-4 col-8" type="submit" (click)="onSubmitt(co.value)"><i class="bi bi-cart3" style="font-size: 20px;"></i></button>
+               </div>
+        </div>
+   </form>
+   
+</div>

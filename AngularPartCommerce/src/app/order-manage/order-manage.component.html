@@ -1,0 +1,65 @@
+<div *ngIf="(basket$|async )==null">
+  <p class="text-primary">there no items in basket</p>
+</div>
+<div class="container col-lg-10 mb-5" *ngIf="basket$|async as basket">
+ <form >
+
+  <div *ngFor="let cart of (basket$|async).items " >
+    <div class="details row mt-4 justify-content-between mb-5 align-items-center">
+      <div class="image col-12 col-sm-9 col-lg-3 col-md-4 row justify-content-center">
+        <img [src]="path+cart.imageUrl" class=" img-fluid  col-7 col-sm-6 col-md-10" style="height: 80px;" alt="...">
+        <div class="det p-4  text-md-start ms-4  text-center">
+            <h4 class="text-primary mb-3">{{cart.title}}</h4>
+        </div>
+       </div>
+       <div class="product mb-3 col-10 col-sm-3 col-lg-3 row justify-content-between d-flex align-items-center">
+        <span class="text-primary col-2" style="font-size: 16px;">{{cart.price*cart.count}}</span>
+        <span class="plus  col-2 " (click)="increamentItem(cart)"><i style="font-size: 23px; cursor: pointer;" class="bi bi-plus-circle  text-success" ></i></span>
+        <span class="text-primary col-2" style="font-size: 16px;">{{cart.count}}</span>
+        <span class="munis  col-2 " (click)="decreamentItem(cart)"><i style="font-size: 23px; cursor: pointer;" class="bi bi-dash-circle-fill me-1 color-primary"></i></span>
+        <span class="plus  col-2 " (click)="removeItem(cart)"><i style="font-size: 23px; cursor: pointer; " class="bi bi-trash3   text-danger" ></i></span>
+      </div>
+        </div>
+  </div>
+  <div class="col-6 offset-6">
+<app-order-total></app-order-total>
+  </div>
+      <div class="choice mt-5 ">
+          <div class="row mt-5 justify-content-center">
+              <a routerLink="id" class=" btn btn-primary text-light col-lg-3 col-md-4 col-8 me-md-4 mb-4 mb-md-0">Go Back</a>
+              <button class=" btn btn-outline-primary col-lg-3 col-md-4 col-8" type="submit" (click)="onsub()">Checkout</button>
+             </div>
+      </div>
+ </form>
+</div>
+
+<!--<div class="container col-lg-10">
+ <form >
+  <div *ngFor="let cart of shoppingCart" >
+    <div class="details row mt-4 justify-content-between mb-5 align-items-center">
+      <div class="image col-12 col-sm-9 col-lg-3 col-md-4 row justify-content-center">
+        <img [src]="path+cart.product.imageUrl" class=" img-fluid  col-7 col-sm-6 col-md-10" style="height: 80px;" alt="...">
+        <div class="det p-4  text-md-start ms-4  text-center">
+            <h4 class="text-primary mb-3">{{cart.product.title}}</h4>
+        </div>
+       </div>
+       <div class="product col-8 col-sm-3 col-lg-3 row">
+        <div class="row col-5" > 
+          <span class="text-primary col-4" style="font-size: 16px;">{{cart.product.price}}</span>
+          <span class="text-primary col-2" style="font-size: 16px;">X</span>
+          <span class="text-primary col-4" style="font-size: 16px;">{{cart.count}}</span>
+        </div>
+         <span class="plus mb-3 col-3 " (click)="Increase(cart.product.id)"><i style="font-size: 23px; cursor: pointer;" class="bi bi-plus-circle  text-success" ></i></span>
+         <span class="munis mb-3 col-3 " (click)="Decrease(cart.product.id)"><i style="font-size: 23px; cursor: pointer;" class="bi bi-dash-circle-fill color-primary"></i></span>
+       </div>
+        </div>
+  </div>
+  <h5 class="text-info">Price : <span class="text-sucess">{{subtotal|currency}}</span></h5>
+      <div class="choice mt-5 ">
+          <div class="row mt-5 justify-content-center">
+              <a routerLink="id" class=" btn btn-primary text-light col-lg-3 col-md-4 col-8 me-md-4 mb-4 mb-md-0">Go Back</a>
+              <button class=" btn btn-outline-primary col-lg-3 col-md-4 col-8" type="submit" (click)="onsub()">Checkout</button>
+             </div>
+      </div>
+ </form>
+</div>-->

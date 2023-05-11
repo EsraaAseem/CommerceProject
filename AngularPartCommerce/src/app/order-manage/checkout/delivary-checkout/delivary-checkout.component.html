@@ -1,0 +1,30 @@
+<div class="mt-4" [formGroup]="checkoutForm">
+<div class="row" formGroupName="delieveryForm">
+<div class="col-6 form-group " *ngFor="let method of deliveryMethods">
+<input type="radio"
+id="{{method.id}}"
+value="{{method.id}}"
+formControlName="delieveryMethod"
+class="custom-control-input mb-3"
+(click)="setdelivaryPrice(method)"
+>
+<label for="{{method.id}}" class="custom-control-label">
+    <strong class="text-primary mb-3">
+        {{method.shortTime}} - {{method.price|currency}}
+    </strong>
+    <br>
+    <span class="label-description text-info mb-3">{{method.description}}</span>
+</label>
+</div>
+<h5 class=" header5 text-primary mt-5 mb-5 col-6">Total Price : <span class="text-sucess"></span></h5>
+</div>
+<div class="d-flex justify-content-between mb-4 ">
+    <button class="btn btn-outline-primary" cdkStepperPrevious>
+        <i class="bi bi-caret-left"></i>
+    Go TO Address
+    </button>
+    <button class="btn btn-primary"  [disabled]="checkoutForm.get('delieveryForm').invalid"
+     cdkStepperNext>
+       <i class="bi bi-caret-right"></i>Go TO Review
+    </button>
+</div>

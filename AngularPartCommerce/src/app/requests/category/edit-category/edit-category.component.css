@@ -1,0 +1,25 @@
+.errorcontent{
+    width: 50%;
+    height: 50%;
+    background-color: #4b5d727d;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    color: white;
+    border-radius: 25px;
+    z-index: 1000;
+}
+.close{
+    position: absolute;
+    color: white;
+    border-color: white;
+    top: 0px;
+    right: 0px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 30px;
+}
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched{
+border: 1px solid red;
+}

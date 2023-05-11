@@ -1,0 +1,12 @@
+F:\0.App\Front-end\Angular\AngDot-Commerce\AspCorePartCommerce\AspCorePartCommerce.Utility\bin\Debug\net7.0\AspCorePartCommerce.Utility.deps.json
+F:\0.App\Front-end\Angular\AngDot-Commerce\AspCorePartCommerce\AspCorePartCommerce.Utility\bin\Debug\net7.0\AspCorePartCommerce.Utility.dll
+F:\0.App\Front-end\Angular\AngDot-Commerce\AspCorePartCommerce\AspCorePartCommerce.Utility\bin\Debug\net7.0\AspCorePartCommerce.Utility.pdb
+F:\0.App\Front-end\Angular\AngDot-Commerce\AspCorePartCommerce\AspCorePartCommerce.Utility\obj\Debug\net7.0\AspCorePartCommerce.Utility.csproj.AssemblyReference.cache
+F:\0.App\Front-end\Angular\AngDot-Commerce\AspCorePartCommerce\AspCorePartCommerce.Utility\obj\Debug\net7.0\AspCorePartCommerce.Utility.GeneratedMSBuildEditorConfig.editorconfig
+F:\0.App\Front-end\Angular\AngDot-Commerce\AspCorePartCommerce\AspCorePartCommerce.Utility\obj\Debug\net7.0\AspCorePartCommerce.Utility.AssemblyInfoInputs.cache
+F:\0.App\Front-end\Angular\AngDot-Commerce\AspCorePartCommerce\AspCorePartCommerce.Utility\obj\Debug\net7.0\AspCorePartCommerce.Utility.AssemblyInfo.cs
+F:\0.App\Front-end\Angular\AngDot-Commerce\AspCorePartCommerce\AspCorePartCommerce.Utility\obj\Debug\net7.0\AspCorePartCommerce.Utility.csproj.CoreCompileInputs.cache
+F:\0.App\Front-end\Angular\AngDot-Commerce\AspCorePartCommerce\AspCorePartCommerce.Utility\obj\Debug\net7.0\AspCorePartCommerce.Utility.dll
+F:\0.App\Front-end\Angular\AngDot-Commerce\AspCorePartCommerce\AspCorePartCommerce.Utility\obj\Debug\net7.0\refint\AspCorePartCommerce.Utility.dll
+F:\0.App\Front-end\Angular\AngDot-Commerce\AspCorePartCommerce\AspCorePartCommerce.Utility\obj\Debug\net7.0\AspCorePartCommerce.Utility.pdb
+F:\0.App\Front-end\Angular\AngDot-Commerce\AspCorePartCommerce\AspCorePartCommerce.Utility\obj\Debug\net7.0\ref\AspCorePartCommerce.Utility.dll

@@ -1,0 +1,19 @@
+<div class="backgound-image d-flex justify-content-center " ><!--[ngStyle]="{'background-image': 'url('+path+boximg+')'}" style="background-size: contain;"-->
+<div class=" backgound-image col-11 col-md-8">
+    <img  [src]="path+boximg" class="card-img-top img-fluid"  style="height: 100%;" alt="...">
+</div>
+</div>
+<div class="ms-2 me-2 mt-5 mb-3">
+    <div class="maincards row justify-content-center" >
+        <div class="card mb-3 ms-2" style="width: 18rem;" *ngFor="let cat of categories">
+            <h4 class="card-title text-center text-primary mt-3 mb-2">{{cat.name}}</h4>
+           <button [routerLink]="cat.id" style="border: none;">
+            <img  [src]="path+cat.imgCatPath" class="card-img-top img-fluid"  style="height:200px;" alt="...">
+            <div class="card-body">
+              <a href="#" class="btn text-primary">show</a>
+            </div>
+           </button>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,64 @@
+<nav class="navbar  navbar-expand navbar-light bg-light">
+  <div class="container-fluid ">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-8 col-md-9 text-md-center">
+      <a class="navbar-brand col-3 col-md-1 col-sm-2 " href="#"><img src="assets/images/Shopping-Logo.png" alt="Not Found"  class="img-fluid"></a>
+     <div class="d-flex align-items-center">
+      <li class="nav-item align-items-center" ngbDropdown>
+        <a ngbDropdownToggle class="nav-link text-primary" id="navbarDropdown" role="button"  aria-expanded="false">
+          List
+        </a>
+        <ul ngbDropdownMenu="navbarDropdown" class="dropdown-menu " aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" routerLink="category">Category</a></li>
+          <li><a class="dropdown-item" routerLink="brand">Brand</a></li>
+          <li><a class="dropdown-item" routerLink="product">Product</a></li>
+          <li><a class="dropdown-item"  routerLink="register" *ngIf="currentUser&& currentUser.role=='Admin'">Add User</a></li>
+          <li><a class="dropdown-item"  routerLink="/orders">View Orders</a></li>
+
+          <li><hr class="dropdown-divider"></li>
+
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </li>
+      <li class="nav-item .roundparent">
+        <!--<div class="round"  *ngIf="shoppingCarts.length>0"><span style="color: white; padding-bottom: 20px;">{{shoppingCarts.length}} </span></div>
+        -->
+        <div class="round"  *ngIf="basket$|async as basket"><span style="color: white; padding-bottom: 20px;">{{basket.items.length}} </span></div>
+          <a class="nav-link active col-md-11 col-sm-10 " aria-current="page" routerLink="basket"><i class="bi bi-cart3 text-primary" style="font-size: 20px;"></i></a>
+      </li>
+     </div>
+    </ul>
+      <form class="col-4 col-md-2  text-end ">
+        <a class="btn btn-outline-primary "  routerLink="login" *ngIf="!currentUser">log in</a>
+        <div class="row justify-content-around around align-items-center">
+          <div class="col-sm-4 col-md-3 mt-2"><p *ngIf="currentUser" class="text-primary ">{{currentUser.userName}}</p></div>
+          <button class="btn btn-outline-primary col-sm-7 col-md-5" style="height: 40px;" (click)="onLogout()"  *ngIf="currentUser">log out</button>
+        </div>
+
+      </form>
+    </div>
+</nav>
+
+<nav class="navbar navbar-light search-nav">
+  <div class="container-fluid">
+    <a class="navbar-brand col-2 text-primary" style="cursor: pointer;"><i class="bi bi-gear" (click)="set()"></i></a>
+   <div class="col-9 p-2">
+    <form class="d-flex align-items-center col-10  justify-content-md-center">
+      <input class="form-control me-2 text-primary" type="search" placeholder="Search" aria-label="Search">
+        <i class="bi bi-search text-primary"></i> 
+    </form>
+   </div>
+  </div>
+</nav>
+
+<div class="setting position-fixed col-md-4 col-lg-3  col-6" [ngStyle]="{left:open?'-50%':'0'}">
+  <i class="bi bi-x-circle close"  (click)="set()"></i>
+  <div class="list text-center row justify-content-center">
+   <div class="list-items col-11">
+    <h5 class="fs-2 text-light mt-4 mb-3">TYPE</h5>
+    <ul class="list-group .g" *ngFor="let cat of catgories">
+    <li class="list-group-item mb-2" (click)="clic(cat.id)"><a class="" style="cursor: pointer;" routerLink="shopping/{{cat.id}}">{{cat.name}}</a> </li>
+
+  </ul>
+   </div>
+  </div>
+</div>
